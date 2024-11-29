@@ -197,7 +197,7 @@ const Login = (props) => {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter your email"
+                            placeholder="Enter your ID"
                             required
                         />
                     </div>
