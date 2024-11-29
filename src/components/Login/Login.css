@@ -1,0 +1,118 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3b8d99, #6b6b83, #aa4b6b);
+    color: white;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.voice-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.voice-controls button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #3b8d99;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.voice-controls button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.voice-controls button:hover:not(:disabled) {
+    background: #317680;
+}
+
+.command {
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.login-form, .nav {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3b8d99;
+    box-shadow: 0 0 4px rgba(59, 141, 153, 0.5);
+}
+
+.login-button {
+    background: #3b8d99;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-button:hover {
+    background: #317680;
+}
+
+.nav button {
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #3b8d99;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.nav button:hover {
+    background: #317680;
+}
+
+.nav button span {
+    display: block;
+    margin-top: 0.5rem;
+}
