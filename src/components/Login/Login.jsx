@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./Login.css";
 import Result from "../Results/Result";
+import Cookies from 'js-cookie';
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
@@ -8,11 +9,31 @@ const Login = (props) => {
     const [password, setPassword] = useState("");
     const [loged,setLoged] = useState(false);
     const [listening, setListening] = useState(false);
-    const [first, setFirst] = useState(0);
-    const [second, setSecond] = useState(0);
-    const [third, setThird] = useState(0);
-    const [fourth, setFourth] = useState(0);
-    const [fifth, setFifth] = useState(0);
+    const [first, setFirst] = useState(() => {
+        // Initialize state from cookies
+        const value = Cookies.get('first');
+        return value ? JSON.parse(value) : 0;
+    });
+    const [second, setSecond] = useState(() => {
+        // Initialize state from cookies
+        const value = Cookies.get('second');
+        return value ? JSON.parse(value) : 0;
+    });
+    const [third, setThird] = useState(() => {
+        // Initialize state from cookies
+        const value = Cookies.get('third');
+        return value ? JSON.parse(value) : 0;
+    });
+    const [fourth, setFourth] = useState(() => {
+        // Initialize state from cookies
+        const value = Cookies.get('fourth');
+        return value ? JSON.parse(value) : 0;
+    });
+    const [fifth, setFifth] = useState(() => {
+        // Initialize state from cookies
+        const value = Cookies.get('fifth');
+        return value ? JSON.parse(value) : 0;
+    });
     const [command, setCommand] = useState('');
     const readScreen = () => {
         const content = document.body.innerText;
@@ -24,6 +45,27 @@ const Login = (props) => {
 
         window.speechSynthesis.speak(utterance);
     };
+
+    // Update cookies when the state changes
+    useEffect(() => {
+        Cookies.set('first', JSON.stringify(first), { expires: 7 });
+    }, [first]);
+
+    useEffect(() => {
+        Cookies.set('second', JSON.stringify(second), { expires: 7 });
+    }, [second]);
+
+    useEffect(() => {
+        Cookies.set('third', JSON.stringify(third), { expires: 7 });
+    }, [third]);
+
+    useEffect(() => {
+        Cookies.set('fourth', JSON.stringify(fourth), { expires: 7 });
+    }, [fourth]);
+
+    useEffect(() => {
+        Cookies.set('fifth', JSON.stringify(fifth), { expires: 7 });
+    }, [fifth]);
 
     const pauseReading = () => {
         if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
@@ -197,7 +239,7 @@ const Login = (props) => {
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter your email"
+                            placeholder="Enter your ID"
                             required
                         />
                     </div>
